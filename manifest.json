@@ -1,6 +1,7 @@
 {
     "name": "ToneTrainer",
     "short_name": "Tones",
+    "start_url": ".",
     "icons": [
         {
             "src": "./images/android-chrome-192x192.png",
