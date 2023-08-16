@@ -189,14 +189,14 @@
         radioButton.addEventListener('change', switchMode);
     });
     min.addEventListener('change', function () {
-        if (min.value >= max.value) {
-            min.value = max.value - 100;
+        if (parseInt(min.value) >= parseInt(max.value)) {
+            min.value = parseInt(max.value) - 100;
         }
         findPositions();
     });
     max.addEventListener('change', function () {
-        if (max.value <= min.value) {
-            max.value = min.value + 100;
+        if (parseInt(max.value) <= parseInt(min.value)) {
+            max.value = parseInt(min.value) + 100;
         }
         findPositions();
     });
