@@ -1,4 +1,4 @@
-const cacheName = 'tones-v1';
+const cacheName = 'randomchinese-v1';
 
 const cacheFiles = [
     './index.html',
