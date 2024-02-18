@@ -110,6 +110,8 @@ legend {
     border-radius: 8px;
     border: 0;
     font-size: 14px;
+    margin: 0 auto;
+    font-weight: bold;
 }
 
 button:hover,
