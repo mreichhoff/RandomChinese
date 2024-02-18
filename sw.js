@@ -13,16 +13,13 @@ self.addEventListener('fetch', (e) => {
     if (e.request.method === 'GET') {
         e.respondWith((async () => {
             const cache = await caches.open(cacheName);
-            try {
-                const response = await fetch(e.request);
-                cache.put(e.request, response.clone());
-                return response;
-            } catch (e) {
-                const r = await cache.match(e.request);
-                if (r) {
-                    return r;
-                }
+            const r = await cache.match(e.request);
+            if (r) {
+                return r;
             }
+            const response = await fetch(e.request);
+            cache.put(e.request, response.clone());
+            return response;
         })());
     }
 });
