@@ -14,12 +14,18 @@
     --controls-height: 80px;
     --fieldset-margin: 4px 10px;
     --control-color: black;
+    --button-container-width: 50%;
+    --button-container-height: 100%;
+    --button-page-flex-direction: row;
 }
 
 @media (max-width: 650px) {
     :root {
         --fieldset-margin: 4px 2px;
         --controls-height: 132px;
+        --button-page-flex-direction: column;
+        --button-container-width: 100%;
+        --button-container-height: 50%;
     }
 
     fieldset label {
@@ -173,4 +179,68 @@ button:active {
 
 .tone4 {
     color: var(--tone-4-color)
+}
+
+.two-pane {
+    display: flex;
+    flex-direction: var(--button-page-flex-direction);
+}
+
+#wrong-button-container {
+    background-color: #eb3434;
+}
+
+#right-button-container {
+    background-color: #7aeb34;
+}
+
+.button-container {
+    width: var(--button-container-width);
+    height: var(--button-container-height);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 50px;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    border-radius: 100%;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    user-select: none;
+    padding: 30px;
+}
+
+.button:active {
+    position: relative;
+    top: 6px;
+    left: 6px;
+}
+
+.wrong {
+    box-shadow: 12px 12px 0px 0px #8a2a21;
+    background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    background-color: #c62d1f;
+    border: 1px solid #d02718;
+}
+
+.wrong:active {
+    box-shadow: 6px 6px 0px 0px #8a2a21;
+}
+
+.right {
+    box-shadow: 12px 12px 0px 0px #32aa16;
+    background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+    background-color: #44c767;
+    border: 1px solid #18ab29;
+}
+
+.right:active {
+    box-shadow: 6px 6px 0px 0px #32aa16;
 }

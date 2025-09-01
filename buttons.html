@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <script type="module">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        };
+    </script>
+</head>
+
+<body class="two-pane">
+    <audio src="audio/right.mp3" id="right-audio"></audio>
+    <audio src="audio/wrong.mp3" id="wrong-audio"></audio>
+    <div id="wrong-button-container" class="button-container">
+        <span id="wrong-button" class="wrong button">Wrong</span>
+    </div>
+    <div id="right-button-container" class="button-container">
+        <span id="right-button" class="right button">Right</span>
+    </div>
+    <script>
+        const rightAudio = document.getElementById('right-audio');
+        const wrongAudio = document.getElementById('wrong-audio');
+        const rightButton = document.getElementById('right-button');
+        const wrongButton = document.getElementById('wrong-button');
+        rightButton.addEventListener('click', function () {
+            rightAudio.load();
+            rightAudio.play();
+        });
+        wrongButton.addEventListener('click', function () {
+            wrongAudio.load();
+            wrongAudio.play();
+        });
+    </script>
+</body>
+
+</html>
